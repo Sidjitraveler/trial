@@ -228,8 +228,10 @@ def area_page(slug, a):
             <li><svg><use href="#d-pin"/></svg><span><strong>Travel extra</strong>, quoted before you book</span></li>
             <li><svg><use href="#d-cal"/></svg><span><strong>Sat &amp; Sun</strong>, 7 am – 10 pm</span></li>
             <li><svg><use href="#d-moon"/></svg><span>Book <strong>3+ days ahead</strong></span></li>
-            <li><svg><use href="#d-lock"/></svg><span><strong>₹500 UPI advance</strong> confirms your slot</span></li>
+            <li><svg><use href="#d-lock"/></svg><span><strong>Pay nothing</strong> until I confirm, then a ₹500 UPI advance</span></li>
+            <li><svg><use href="#d-shh"/></svg><span><strong>Video call</strong> before your first booking, if you'd like</span></li>
           </ul>
+          <a class="link" href="/#how">see exactly how a session works →</a>
         </aside>
       </div>
     </section>
