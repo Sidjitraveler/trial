@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#151515" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 440 360">
+  <path d="M80 120C74 58 170 26 256 38c96 14 164 60 156 156-8 92-80 146-184 140C120 328 44 286 50 206c3-40 34-50 30-86Z" fill="#C2EDD4" stroke="none"/>
+  <path d="M34 320c130-6 270 6 380-2"/>
+  <!-- diffuser -->
+  <path d="M150 320h128l-14-78H164Z" fill="#BFE2FF"/>
+  <path d="M164 242c0-30 100-30 100 0" fill="#FBF8F1"/>
+  <path d="M214 212v-8"/>
+  <path d="M160 282h108" stroke-width="2.6"/>
+  <path d="M196 196c-12-16 12-24 0-42s10-26 0-42M222 190c-12-16 12-24 0-42s10-26 0-42M248 196c-12-16 12-24 0-42" stroke-width="2.8"/>
+  <!-- lavender in vase -->
+  <path d="M328 320h52l-6-50h-40Z" fill="#FFC8A8"/>
+  <path d="M342 270c-4-40-12-70-22-96M354 270c0-44 2-74 8-104M366 270c6-36 16-62 28-84"/>
+  <g fill="#D6C6FF" stroke-width="2.4">
+    <ellipse cx="322" cy="180" rx="6" ry="9" transform="rotate(-20 322 180)"/><ellipse cx="327" cy="198" rx="6" ry="9" transform="rotate(-20 327 198)"/><ellipse cx="317" cy="162" rx="5" ry="8" transform="rotate(-20 317 162)"/>
+    <ellipse cx="362" cy="170" rx="6" ry="9"/><ellipse cx="361" cy="188" rx="6" ry="9"/><ellipse cx="363" cy="152" rx="5" ry="8"/>
+    <ellipse cx="390" cy="192" rx="6" ry="9" transform="rotate(25 390 192)"/><ellipse cx="383" cy="208" rx="6" ry="9" transform="rotate(25 383 208)"/><ellipse cx="396" cy="176" rx="5" ry="8" transform="rotate(25 396 176)"/>
+  </g>
+  <!-- dropper bottle -->
+  <rect x="76" y="262" width="44" height="58" rx="10" fill="#FFB067"/>
+  <rect x="84" y="240" width="28" height="22" rx="4" fill="#151515"/>
+  <path d="M98 240v-18" stroke-width="5"/>
+  <path d="M86 284h24" stroke="#FBF8F1" stroke-width="3"/>
+  <path d="M128 228c-6 8-6 14 0 16 6-2 6-8 0-16Z" fill="#FFB067" stroke-width="2.4"/>
+  <g transform="translate(110 104)"><path d="M0-16C1-5 5-1 16 0 5 1 1 5 0 16-1 5-5 1-16 0-5-1-1-5 0-16Z" fill="#FBF8F1"/></g>
+  <g transform="translate(300 84) scale(.65)"><path d="M0-16C1-5 5-1 16 0 5 1 1 5 0 16-1 5-5 1-16 0-5-1-1-5 0-16Z" fill="#E4F57A"/></g>
+</svg>

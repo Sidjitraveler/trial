@@ -270,7 +270,6 @@ h2 .inline-doodle { fill: var(--lime); }
 
 /* FAQ */
 .faq-grid { display: grid; grid-template-columns: 0.75fr 1.25fr; gap: clamp(32px, 6vw, 88px); }
-.faq-doodle { width: 120px; height: 120px; margin-top: 36px; stroke-width: 1.8; color: var(--ink); }
 .faq-list { display: grid; gap: 16px; }
 .faq-list details { box-shadow: 4px 4px 0 var(--ink); transition: background .2s; }
 .faq-list details[open] { background: var(--lime); }
@@ -379,7 +378,6 @@ h2 .inline-doodle { fill: var(--lime); }
   .hero-grid, .about-grid, .privacy-grid, .areas-grid, .faq-grid, .book-grid { grid-template-columns: 1fr; }
   .hero-art { order: -1; justify-self: center; max-width: 420px; margin-bottom: -8px; }
   .about-card { max-width: 300px; justify-self: center; margin: 0 24px; }
-  .faq-doodle { display: none; }
   .note-form { display: none; }
 }
 
@@ -472,4 +470,19 @@ h2 .inline-doodle { fill: var(--lime); }
   .journey .icon { width: 48px; height: 48px; border-radius: 14px; }
   .journey .icon svg { width: 26px; height: 26px; }
   .journey > li:not(:last-child)::before { left: 23px; top: 58px; }
+}
+
+/* Illustrations */
+.illo { display: block; height: auto; max-width: 100%; }
+.head-row { display: grid; grid-template-columns: 1.4fr 1fr; gap: 40px; align-items: center; margin-bottom: clamp(36px, 5vw, 56px); }
+.head-row .section-head { margin-bottom: 0; }
+.illo-kit { width: 100%; max-width: 420px; justify-self: end; }
+.illo-chat { width: 100%; max-width: 340px; margin-top: 28px; }
+.illo-aroma { width: 100%; max-width: 340px; margin-top: 28px; }
+.illo-home { width: 100%; max-width: 260px; margin: -6px auto 10px; }
+.illo-tea { width: 100%; max-width: 320px; margin-top: 30px; }
+@media (max-width: 860px) {
+  .head-row { grid-template-columns: 1fr; gap: 8px; }
+  .illo-kit { justify-self: center; max-width: 320px; order: -1; }
+  .illo-chat, .illo-aroma, .illo-tea { max-width: 260px; margin-inline: auto; }
 }

@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#151515" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 480 360">
+  <path d="M86 112C80 52 176 26 262 40c96 16 176 50 170 150-6 92-84 140-190 136-96-4-172-34-166-118 2-40 14-56 10-96Z" fill="#E4F57A" stroke="none"/>
+  <path d="M40 322c120-6 290 6 404-2"/>
+  <!-- folded massage table -->
+  <rect x="78" y="104" width="112" height="216" rx="18" fill="#FBF8F1"/>
+  <path d="M134 112v200M96 170h20M152 170h20"/>
+  <path d="M112 104c0-26 44-26 44 0" stroke-width="4"/>
+  <!-- rolled towels -->
+  <rect x="206" y="276" width="112" height="44" rx="22" fill="#FBF8F1"/>
+  <path d="M296 298c0-6 10-6 10 0 0 10-16 10-16 0 0-12 22-12 22 0"/>
+  <rect x="216" y="234" width="98" height="42" rx="21" fill="#D6C6FF"/>
+  <path d="M292 255c0-6 10-6 10 0 0 10-16 10-16 0 0-12 22-12 22 0"/>
+  <!-- oil bottle -->
+  <rect x="334" y="222" width="50" height="98" rx="12" fill="#FFC8A8"/>
+  <rect x="348" y="204" width="22" height="18" rx="3" fill="#FBF8F1"/>
+  <path d="M359 204v-16h24v9"/>
+  <path d="M346 256h26M346 270h18"/>
+  <!-- candle -->
+  <rect x="402" y="276" width="34" height="44" rx="5" fill="#FBF8F1"/>
+  <path d="M419 276v-7"/>
+  <path d="M419 267c-8-8-3-17 0-24 4 8 9 16 0 24Z" fill="#FFB067" stroke-width="2.6"/>
+  <path d="M398 250l-7-5M440 250l7-5M419 232v-8" stroke-width="2.6"/>
+  <!-- music notes -->
+  <path d="M232 150v-44l34-8v42" stroke-width="3"/>
+  <ellipse cx="225" cy="152" rx="9" ry="7" fill="#151515"/>
+  <ellipse cx="259" cy="142" rx="9" ry="7" fill="#151515"/>
+  <g transform="translate(372 96)"><path d="M0-16C1-5 5-1 16 0 5 1 1 5 0 16-1 5-5 1-16 0-5-1-1-5 0-16Z" fill="#BFE2FF"/></g>
+  <g transform="translate(318 168) scale(.6)"><path d="M0-16C1-5 5-1 16 0 5 1 1 5 0 16-1 5-5 1-16 0-5-1-1-5 0-16Z" fill="#FBF8F1"/></g>
+  <g transform="translate(60 74) scale(.75)"><path d="M0-16C1-5 5-1 16 0 5 1 1 5 0 16-1 5-5 1-16 0-5-1-1-5 0-16Z" fill="#FFC8A8"/></g>
+</svg>
