@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://sidjitraveler.github.io/sukoon-massage/sitemap.xml
+Sitemap: https://sukoonbysid.in/sitemap.xml
