@@ -420,3 +420,5 @@ h2 .inline-doodle { fill: var(--lime); }
 .map .dots circle { fill: var(--paper); stroke: var(--ink); stroke-width: 2.6; }
 @media (max-width: 1020px) { .menu-grid.four { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 600px) { .menu-grid.four { grid-template-columns: 1fr; } }
+.avail { display: flex; gap: 12px; align-items: flex-start; margin-top: 18px; padding: 14px 16px; border: 2px solid var(--ink); border-radius: 16px; background: var(--lime); max-width: 440px; }
+.avail svg { width: 26px; height: 26px; flex: none; stroke-width: 3.4; margin-top: 1px; }
