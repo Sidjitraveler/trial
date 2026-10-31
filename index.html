@@ -269,7 +269,7 @@
           <li class="reveal">
             <span class="icon bg-lilac"><svg><use href="#d-cal"/></svg></span>
             <h3><span class="num">2</span> lock it in</h3>
-            <p>We agree on the time and the travel charge, so the total is clear upfront. No surprises.</p>
+            <p>We agree on the time and the travel charge. A ₹500 advance by UPI confirms your slot, and it comes off your total.</p>
           </li>
           <li class="reveal">
             <span class="icon bg-peach"><svg><use href="#d-bag"/></svg></span>
@@ -383,15 +383,15 @@
           </details>
           <details class="card">
             <summary>how much does it cost?</summary>
-            <p>₹2,500 per massage (about an hour), plus travel, which depends on how far you are. I'll confirm the total before you book.</p>
+            <p>₹2,500 per massage (about an hour), plus travel, which depends on how far you are. I'll confirm the total before you book. A ₹500 advance confirms the slot and comes off the total.</p>
           </details>
           <details class="card">
             <summary>how do I pay?</summary>
-            <p>By UPI or cash after the session, including the travel charge. For first-time bookings very early or late in the day, I might ask for a small advance to hold the slot.</p>
+            <p>You pay a ₹500 advance by UPI to confirm the booking. The rest, plus the travel charge, is paid by UPI or cash after the session.</p>
           </details>
           <details class="card">
             <summary>what if I need to cancel?</summary>
-            <p>It's free if you cancel at least 3 hours before. Later cancellations may cost ₹500, because I've usually turned someone else away for that slot.</p>
+            <p>Tell me at least 24 hours before and I'll refund the ₹500 advance or move it to another weekend. If you cancel later than that, I keep the advance, because I've usually turned someone else away for that slot.</p>
           </details>
           <details class="card">
             <summary>is massage okay for me?</summary>
@@ -408,7 +408,7 @@
           <p class="kicker">book a session</p>
           <h2>ready to <span class="scribble">unwind?<svg viewBox="0 0 200 16" preserveAspectRatio="none"><use href="#d-squiggle"/></svg></span></h2>
           <p class="muted">Fill this in and WhatsApp opens with your request already typed out. Nothing is saved on this site.</p>
-          <p class="avail"><svg><use href="#d-cal"/></svg><span><strong>Saturdays &amp; Sundays only.</strong> Please book at least 3 days ahead.</span></p>
+          <p class="avail"><svg><use href="#d-cal"/></svg><span><strong>Saturdays &amp; Sundays only.</strong> Please book at least 3 days ahead. A ₹500 UPI advance confirms your slot.</span></p>
           <div class="contact-alt">
             <a data-wa href="https://wa.me/919607227768"><svg><use href="#d-chat"/></svg>WhatsApp</a>
             <a href="tel:+919607227768"><svg><use href="#d-heart"/></svg>+91 96072 27768</a>
@@ -419,9 +419,20 @@
         </div>
 
         <form class="booking card reveal" id="booking-form" novalidate>
-          <div class="field">
-            <label for="f-name">your name</label>
-            <input id="f-name" name="name" type="text" autocomplete="given-name" required>
+          <div class="field-row">
+            <div class="field">
+              <label for="f-name">your name</label>
+              <input id="f-name" name="name" type="text" autocomplete="given-name" required>
+            </div>
+            <div class="field">
+              <label for="f-gender">gender</label>
+              <select id="f-gender" name="gender" required>
+                <option value="" disabled selected>select</option>
+                <option>Female</option>
+                <option>Male</option>
+                <option>Prefer not to say</option>
+              </select>
+            </div>
           </div>
           <div class="field-row">
             <div class="field">
@@ -477,7 +488,7 @@
             <label for="f-notes">anything I should know? <span class="opt">(optional)</span></label>
             <textarea id="f-notes" name="notes" rows="3" placeholder="stiff neck, prefer firm pressure, old knee injury…"></textarea>
           </div>
-          <p class="form-error" role="alert" hidden>Please add your name, area, treatment, date and time.</p>
+          <p class="form-error" role="alert" hidden>Please fill in all the fields above (notes are optional).</p>
           <button class="btn btn-block" type="submit"><svg class="i"><use href="#d-chat"/></svg> continue on whatsapp</button>
         </form>
       </div>
