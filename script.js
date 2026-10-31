@@ -54,7 +54,13 @@ if ("IntersectionObserver" in window) {
 const form = document.getElementById("booking-form");
 const dateInput = document.getElementById("f-date");
 const today = new Date();
-dateInput.min = new Date(today.getTime() - today.getTimezoneOffset() * 60000).toISOString().slice(0, 10);
+// Weekends only, booked at least 3 days ahead.
+const MIN_DAYS_AHEAD = 3;
+const isoLocal = (dt) => new Date(dt.getTime() - dt.getTimezoneOffset() * 60000).toISOString().slice(0, 10);
+const earliest = new Date(today.getFullYear(), today.getMonth(), today.getDate() + MIN_DAYS_AHEAD);
+dateInput.min = isoLocal(earliest);
+const MSG_MISSING = "Please add your name, area, style, date and time.";
+const MSG_DATE = `Sessions are on Saturdays and Sundays only, booked at least ${MIN_DAYS_AHEAD} days ahead. Please pick another date.`;
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -66,6 +72,17 @@ form.addEventListener("submit", (e) => {
     el.setAttribute("aria-invalid", String(bad));
     if (bad) ok = false;
   });
+  error.textContent = MSG_MISSING;
+  if (ok) {
+    const picked = new Date(`${dateInput.value}T00:00`);
+    const day = picked.getDay();
+    if (picked < earliest || (day !== 0 && day !== 6)) {
+      ok = false;
+      dateInput.classList.add("invalid");
+      dateInput.setAttribute("aria-invalid", "true");
+      error.textContent = MSG_DATE;
+    }
+  }
   error.hidden = ok;
   if (!ok) { form.querySelector(".invalid").focus(); return; }
 
