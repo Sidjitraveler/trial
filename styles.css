@@ -407,3 +407,16 @@ h2 .inline-doodle { fill: var(--lime); }
   .faq-list details p { padding: 0 18px 20px; }
   .footer-row p:last-child { text-align: left; }
 }
+
+/* Pricing, area cloud, map dots */
+.chips li.bg-lime { font-weight: 700; padding-left: 14px; }
+.chips a { font-weight: 700; margin-left: 2px; }
+.small-print { font-size: 14px; font-style: italic; }
+.price-inline { color: var(--ink); background: var(--lime); padding: 0 .3em; border-radius: 6px; }
+.menu-grid.four { grid-template-columns: repeat(4, 1fr); gap: 22px; }
+.area-cloud { list-style: none; padding: 0; margin: 0 0 24px; display: flex; flex-wrap: wrap; gap: 10px; }
+.area-cloud li { font-family: var(--display); font-weight: 600; font-size: 15px; padding: 7px 14px; border: 2px solid var(--ink); border-radius: 999px; background: var(--paper); }
+.area-cloud li:nth-child(-n+3) { background: var(--lime); }
+.map .dots circle { fill: var(--paper); stroke: var(--ink); stroke-width: 2.6; }
+@media (max-width: 1020px) { .menu-grid.four { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 600px) { .menu-grid.four { grid-template-columns: 1fr; } }
