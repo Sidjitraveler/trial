@@ -416,9 +416,27 @@ h2 .inline-doodle { fill: var(--lime); }
 .menu-grid.four { grid-template-columns: repeat(4, 1fr); gap: 22px; }
 .area-cloud { list-style: none; padding: 0; margin: 0 0 24px; display: flex; flex-wrap: wrap; gap: 10px; }
 .area-cloud li { font-family: var(--display); font-weight: 600; font-size: 15px; padding: 7px 14px; border: 2px solid var(--ink); border-radius: 999px; background: var(--paper); }
-.area-cloud li:nth-child(-n+3) { background: var(--lime); }
+#areas .area-cloud li:nth-child(-n+3) { background: var(--lime); }
 .map .dots circle { fill: var(--paper); stroke: var(--ink); stroke-width: 2.6; }
 @media (max-width: 1020px) { .menu-grid.four { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 600px) { .menu-grid.four { grid-template-columns: 1fr; } }
 .avail { display: flex; gap: 12px; align-items: flex-start; margin-top: 18px; padding: 14px 16px; border: 2px solid var(--ink); border-radius: 16px; background: var(--lime); max-width: 440px; }
 .avail svg { width: 26px; height: 26px; flex: none; stroke-width: 3.4; margin-top: 1px; }
+
+/* Area pages */
+.area-cloud a { text-decoration: none; }
+.area-cloud li:has(a):hover { background: var(--lime); }
+.crumbs { font-family: var(--display); font-size: 14px; color: var(--muted); margin-bottom: 20px; }
+.crumbs a { color: var(--ink); font-weight: 600; }
+.quick { padding: clamp(24px, 3vw, 36px); background: var(--paper); transform: rotate(1.2deg); box-shadow: 8px 8px 0 var(--lilac), 8px 8px 0 2px var(--ink); }
+.quick ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 14px; }
+.quick li { display: flex; gap: 12px; align-items: flex-start; font-size: 16px; }
+.quick svg { width: 24px; height: 24px; flex: none; stroke-width: 3.4; margin-top: 1px; }
+.style-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 18px; }
+.style-list li { display: flex; gap: 16px; align-items: flex-start; }
+.style-list .icon { width: 52px; height: 52px; margin: 0; flex: none; border-radius: 16px; }
+.style-list .icon svg { width: 28px; height: 28px; }
+.style-list h3 { font-size: 21px; margin-bottom: 2px; letter-spacing: -0.02em; }
+.style-list p { margin: 0; color: var(--muted); font-size: 15px; }
+.cta-band h2 { margin-bottom: 14px; }
+.cta-band .hero-cta { margin: 26px 0 48px; }

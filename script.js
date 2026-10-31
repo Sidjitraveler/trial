@@ -50,65 +50,67 @@ if ("IntersectionObserver" in window) {
   document.querySelectorAll(".reveal").forEach((el) => el.classList.add("in"));
 }
 
-// Booking form → WhatsApp
+// Booking form → WhatsApp (home page only)
 const form = document.getElementById("booking-form");
-const dateInput = document.getElementById("f-date");
-const today = new Date();
-// Weekends only, booked at least 3 days ahead.
-const MIN_DAYS_AHEAD = 3;
-const isoLocal = (dt) => new Date(dt.getTime() - dt.getTimezoneOffset() * 60000).toISOString().slice(0, 10);
-const earliest = new Date(today.getFullYear(), today.getMonth(), today.getDate() + MIN_DAYS_AHEAD);
-dateInput.min = isoLocal(earliest);
-const MSG_MISSING = "Please fill in all the fields above (notes are optional).";
-const MSG_DATE = `Sessions are on Saturdays and Sundays only, booked at least ${MIN_DAYS_AHEAD} days ahead. Please pick another date.`;
+if (form) {
+  const dateInput = document.getElementById("f-date");
+  const today = new Date();
+  // Weekends only, booked at least 3 days ahead.
+  const MIN_DAYS_AHEAD = 3;
+  const isoLocal = (dt) => new Date(dt.getTime() - dt.getTimezoneOffset() * 60000).toISOString().slice(0, 10);
+  const earliest = new Date(today.getFullYear(), today.getMonth(), today.getDate() + MIN_DAYS_AHEAD);
+  dateInput.min = isoLocal(earliest);
+  const MSG_MISSING = "Please fill in all the fields above (notes are optional).";
+  const MSG_DATE = `Sessions are on Saturdays and Sundays only, booked at least ${MIN_DAYS_AHEAD} days ahead. Please pick another date.`;
 
-form.addEventListener("submit", (e) => {
-  e.preventDefault();
-  const error = form.querySelector(".form-error");
-  let ok = true;
-  form.querySelectorAll("[required]").forEach((el) => {
-    const bad = !el.value.trim();
-    el.classList.toggle("invalid", bad);
-    el.setAttribute("aria-invalid", String(bad));
-    if (bad) ok = false;
-  });
-  error.textContent = MSG_MISSING;
-  if (ok) {
-    const picked = new Date(`${dateInput.value}T00:00`);
-    const day = picked.getDay();
-    if (picked < earliest || (day !== 0 && day !== 6)) {
-      ok = false;
-      dateInput.classList.add("invalid");
-      dateInput.setAttribute("aria-invalid", "true");
-      error.textContent = MSG_DATE;
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const error = form.querySelector(".form-error");
+    let ok = true;
+    form.querySelectorAll("[required]").forEach((el) => {
+      const bad = !el.value.trim();
+      el.classList.toggle("invalid", bad);
+      el.setAttribute("aria-invalid", String(bad));
+      if (bad) ok = false;
+    });
+    error.textContent = MSG_MISSING;
+    if (ok) {
+      const picked = new Date(`${dateInput.value}T00:00`);
+      const day = picked.getDay();
+      if (picked < earliest || (day !== 0 && day !== 6)) {
+        ok = false;
+        dateInput.classList.add("invalid");
+        dateInput.setAttribute("aria-invalid", "true");
+        error.textContent = MSG_DATE;
+      }
     }
-  }
-  error.hidden = ok;
-  if (!ok) { form.querySelector(".invalid").focus(); return; }
+    error.hidden = ok;
+    if (!ok) { form.querySelector(".invalid").focus(); return; }
 
-  const d = Object.fromEntries(new FormData(form));
-  const date = new Date(`${d.date}T00:00`).toLocaleDateString("en-IN", {
-    weekday: "short", day: "numeric", month: "short",
+    const d = Object.fromEntries(new FormData(form));
+    const date = new Date(`${d.date}T00:00`).toLocaleDateString("en-IN", {
+      weekday: "short", day: "numeric", month: "short",
+    });
+    const lines = [
+      `Hi Sid, I'd like to book a session.`,
+      ``,
+      `Name: ${d.name.trim()}`,
+      `Gender: ${d.gender}`,
+      `Area: ${d.area}`,
+      `Style: ${d.treatment}`,
+      `When: ${date}, ${d.time}`,
+    ];
+    if (d.notes.trim()) lines.push(`Notes: ${d.notes.trim()}`);
+    lines.push(``, `I understand a ₹500 advance confirms the booking.`);
+    window.open(waLink(lines.join("\n")), "_blank", "noopener");
   });
-  const lines = [
-    `Hi Sid, I'd like to book a session.`,
-    ``,
-    `Name: ${d.name.trim()}`,
-    `Gender: ${d.gender}`,
-    `Area: ${d.area}`,
-    `Treatment: ${d.treatment}`,
-    `When: ${date}, ${d.time}`,
-  ];
-  if (d.notes.trim()) lines.push(`Notes: ${d.notes.trim()}`);
-  lines.push(``, `I understand a ₹500 advance confirms the booking.`);
-  window.open(waLink(lines.join("\n")), "_blank", "noopener");
-});
 
-form.addEventListener("input", (e) => {
-  if (e.target.classList.contains("invalid") && e.target.value.trim()) {
-    e.target.classList.remove("invalid");
-    e.target.removeAttribute("aria-invalid");
-  }
-});
+  form.addEventListener("input", (e) => {
+    if (e.target.classList.contains("invalid") && e.target.value.trim()) {
+      e.target.classList.remove("invalid");
+      e.target.removeAttribute("aria-invalid");
+    }
+  });
+}
 
 document.getElementById("year").textContent = new Date().getFullYear();
