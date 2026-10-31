@@ -1,0 +1,4 @@
+# GitHub Pages: serve files as-is, but keep repo-only files off the live site.
+exclude:
+  - README.md
+  - tools
