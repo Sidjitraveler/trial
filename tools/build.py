@@ -184,6 +184,8 @@ def area_page(slug, a):
 <body>
 {sprite}
   <a class="skip" href="#main">Skip to content</a>
+  <!-- promo: Diwali offer. Remove this block (and run tools/build.py) when the offer ends. -->
+  <a class="promo" data-wa href="https://wa.me/910000000000?text=Hi%2C%20I%27d%20like%20to%20book%20the%20Diwali%20offer%20(%E2%82%B91%2C200)."><span class="promo-tag">diwali offer</span> <span><b>₹1,200</b> <s>₹2,500</s> per massage · limited weekend slots</span> <span class="promo-cta">book on whatsapp →</span></a>
 
   <header class="site-header" id="top">
     <div class="wrap header-inner">
