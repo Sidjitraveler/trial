@@ -106,10 +106,10 @@ squiggle = '<svg viewBox="0 0 200 16" preserveAspectRatio="none"><use href="#d-s
 def area_page(slug, a):
     name = a["name"]
     url = area_url(slug)
-    title = f"Massage at Home in {name}, Bengaluru | ₹2,500 · Sukoon by Sid"
-    desc = (f"Relaxing massage at home in {name}, Bengaluru. Sid brings the table, fresh linens and oils to you. "
+    title = f"Massage at Home in {name}, Bengaluru | ₹2,500 · Sukoon"
+    desc = (f"Relaxing massage at home in {name}, Bengaluru. I bring the table, fresh linens and oils to you. "
             f"₹2,500 per massage plus travel, weekends only. Book on WhatsApp.")
-    wa_text = f"Hi Sid, I'd like to book a massage at home in {name}."
+    wa_text = f"Hi, I'd like to book a massage at home in {name}."
     wa = f"https://wa.me/{PHONE}?text={quote(wa_text)}"
 
     faqs = [
@@ -130,7 +130,7 @@ def area_page(slug, a):
             "serviceType": "Massage at home",
             "name": f"Massage at home in {name}",
             "url": url,
-            "provider": {"@type": "HealthAndBeautyBusiness", "name": "Sukoon by Sid", "url": SITE + "/", "telephone": "+91-00000-00000"},
+            "provider": {"@type": "HealthAndBeautyBusiness", "name": "Sukoon", "url": SITE + "/", "telephone": "+91-00000-00000"},
             "areaServed": {"@type": "Place", "name": f"{name}, Bengaluru"},
             "offers": {"@type": "Offer", "price": "2500", "priceCurrency": "INR", "description": "Per massage, about 60 minutes. Travel extra."},
         },
@@ -167,7 +167,7 @@ def area_page(slug, a):
   <meta name="theme-color" content="#FBF8F1">
   <link rel="canonical" href="{url}">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Massage at home in {esc(name)} · Sukoon by Sid">
+  <meta property="og:title" content="Massage at home in {esc(name)} · Sukoon">
   <meta property="og:description" content="{esc(desc)}">
   <meta property="og:url" content="{url}">
   <meta property="og:image" content="{SITE}/og-image.png">
@@ -310,13 +310,13 @@ def area_page(slug, a):
     <div class="wrap">
       <p class="footer-word">sukoon<svg><use href="#d-sparkle"/></svg></p>
       <div class="footer-row">
-        <p>At-home relaxation massage by Sid · Bengaluru<br>Not a certified therapist. Non-medical, non-sexual massage only.</p>
+        <p>At-home relaxation massage · Bengaluru<br>Not a certified therapist. Non-medical, non-sexual massage only.</p>
         <p><a href="tel:+{PHONE}">+91 00000 00000</a><br>© <span id="year">{date.today().year}</span> Sukoon</p>
       </div>
     </div>
   </footer>
 
-  <a class="wa-float" data-wa href="https://wa.me/{PHONE}" aria-label="Chat with Sid on WhatsApp">
+  <a class="wa-float" data-wa href="https://wa.me/{PHONE}" aria-label="Chat on WhatsApp">
     <svg><use href="#d-chat"/></svg>
   </a>
 

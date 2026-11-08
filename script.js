@@ -92,7 +92,7 @@ if (form) {
       weekday: "short", day: "numeric", month: "short",
     });
     const lines = [
-      `Hi Sid, I'd like to book a session.`,
+      `Hi, I'd like to book a session.`,
       ``,
       `Name: ${d.name.trim()}`,
       `Gender: ${d.gender}`,
