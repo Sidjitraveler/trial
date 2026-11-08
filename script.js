@@ -1,15 +1,10 @@
-// Business WhatsApp number: country code + number, digits only.
-const WHATSAPP = "910000000000";
+// Bookings come in as Instagram DMs to @sukoonbysid.
+const IG_DM = "https://ig.me/m/sukoonbysid";
 
 document.documentElement.classList.add("js");
 
-const waLink = (text) =>
-  `https://wa.me/${WHATSAPP}${text ? `?text=${encodeURIComponent(text)}` : ""}`;
-
-// Keep every WhatsApp link in sync with the number above.
-document.querySelectorAll("[data-wa]").forEach((a) => {
-  const preset = new URL(a.href).searchParams.get("text");
-  a.href = waLink(preset);
+// Instagram links open in a new tab.
+document.querySelectorAll("[data-ig]").forEach((a) => {
   a.target = "_blank";
   a.rel = "noopener";
 });
@@ -50,7 +45,7 @@ if ("IntersectionObserver" in window) {
   document.querySelectorAll(".reveal").forEach((el) => el.classList.add("in"));
 }
 
-// Booking form → WhatsApp (home page only)
+// Booking form → Instagram DM (home page only)
 const form = document.getElementById("booking-form");
 if (form) {
   const dateInput = document.getElementById("f-date");
@@ -102,7 +97,15 @@ if (form) {
     ];
     if (d.notes.trim()) lines.push(`Notes: ${d.notes.trim()}`);
     lines.push(``, `I understand a ₹500 advance confirms the booking.`);
-    window.open(waLink(lines.join("\n")), "_blank", "noopener");
+    // DM links can't carry text, so copy the request for the visitor to paste.
+    const text = lines.join("\n");
+    const note = form.querySelector(".form-ok");
+    const copied = navigator.clipboard ? navigator.clipboard.writeText(text) : Promise.reject();
+    window.open(IG_DM, "_blank", "noopener");
+    copied.then(
+      () => { note.textContent = "Copied! Paste it into the Instagram DM that just opened."; },
+      () => { note.textContent = `Copy this and paste it into the Instagram DM:\n\n${text}`; },
+    ).finally(() => { note.hidden = false; });
   });
 
   form.addEventListener("input", (e) => {

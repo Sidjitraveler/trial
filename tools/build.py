@@ -3,7 +3,6 @@
 Run from the repo root after editing index.html or AREAS:  python3 tools/build.py
 """
 import html
-from urllib.parse import quote
 import json
 import re
 from datetime import date
@@ -11,7 +10,8 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 SITE = "https://sukoonbysid.in"
-PHONE = "910000000000"
+DM = "https://ig.me/m/sukoonbysid"
+IG = "https://www.instagram.com/sukoonbysid/"
 TODAY = date.today().isoformat()
 
 AREAS = {
@@ -108,9 +108,7 @@ def area_page(slug, a):
     url = area_url(slug)
     title = f"Massage at Home in {name}, Bengaluru | ₹2,500 · Sukoon"
     desc = (f"Relaxing massage at home in {name}, Bengaluru. I bring the table, fresh linens and oils to you. "
-            f"₹2,500 per massage plus travel, weekends only. Book on WhatsApp.")
-    wa_text = f"Hi, I'd like to book a massage at home in {name}."
-    wa = f"https://wa.me/{PHONE}?text={quote(wa_text)}"
+            f"₹2,500 per massage plus travel, weekends only. DM @sukoonbysid on Instagram.")
 
     faqs = [
         (f"Do you come to all of {name}?",
@@ -130,7 +128,7 @@ def area_page(slug, a):
             "serviceType": "Massage at home",
             "name": f"Massage at home in {name}",
             "url": url,
-            "provider": {"@type": "HealthAndBeautyBusiness", "name": "Sukoon", "url": SITE + "/", "telephone": "+91-00000-00000"},
+            "provider": {"@type": "HealthAndBeautyBusiness", "name": "Sukoon", "url": SITE + "/", "sameAs": [IG]},
             "areaServed": {"@type": "Place", "name": f"{name}, Bengaluru"},
             "offers": {"@type": "Offer", "price": "2500", "priceCurrency": "INR", "description": "Per massage, about 60 minutes. Travel extra."},
         },
@@ -185,7 +183,7 @@ def area_page(slug, a):
 {sprite}
   <a class="skip" href="#main">Skip to content</a>
   <!-- promo: Diwali offer. Remove this block (and run tools/build.py) when the offer ends. -->
-  <a class="promo" data-wa href="https://wa.me/910000000000?text=Hi%2C%20I%27d%20like%20to%20book%20the%20Diwali%20offer%20(%E2%82%B91%2C200)."><span class="promo-tag">diwali offer</span> <span><b>₹1,200</b> <s>₹2,500</s> per massage · limited weekend slots</span> <span class="promo-cta">book on whatsapp →</span></a>
+  <a class="promo" data-ig href="https://ig.me/m/sukoonbysid"><span class="promo-tag">diwali offer</span> <span><b>₹1,200</b> <s>₹2,500</s> per massage · limited weekend slots</span> <span class="promo-cta">dm us on instagram →</span></a>
 
   <header class="site-header" id="top">
     <div class="wrap header-inner">
@@ -217,8 +215,8 @@ def area_page(slug, a):
           <h1>massage at home in <span class="scribble">{esc(name)}.{squiggle}</span></h1>
           <p class="lede">{esc(a["intro"])}</p>
           <div class="hero-cta">
-            <a class="btn" data-wa href="{wa}">
-              <svg class="i"><use href="#d-chat"/></svg> book on whatsapp
+            <a class="btn" data-ig href="{DM}">
+              <svg class="i"><use href="#d-chat"/></svg> dm us on instagram
             </a>
             <a class="link" href="/#book">or use the booking form →</a>
           </div>
@@ -297,8 +295,8 @@ def area_page(slug, a):
         <h2>ready to unwind in <span class="scribble">{esc(name)}?{squiggle}</span></h2>
         <p class="muted">Message me with your locality and a weekend slot. I usually reply within an hour.</p>
         <div class="hero-cta">
-          <a class="btn" data-wa href="{wa}"><svg class="i"><use href="#d-chat"/></svg> book on whatsapp</a>
-          <a class="link" href="tel:+{PHONE}">or call +91 00000 00000</a>
+          <a class="btn" data-ig href="{DM}"><svg class="i"><use href="#d-chat"/></svg> dm us on instagram</a>
+          <a class="link" data-ig href="{IG}">or see @sukoonbysid →</a>
         </div>
         <p class="kicker">other areas</p>
         <ul class="area-cloud">
@@ -313,12 +311,12 @@ def area_page(slug, a):
       <p class="footer-word">sukoon<svg><use href="#d-sparkle"/></svg></p>
       <div class="footer-row">
         <p>At-home relaxation massage · Bengaluru<br>Not a certified therapist. Non-medical, non-sexual massage only.</p>
-        <p><a href="tel:+{PHONE}">+91 00000 00000</a><br>© <span id="year">{date.today().year}</span> Sukoon</p>
+        <p><a data-ig href="{IG}">@sukoonbysid</a><br>© <span id="year">{date.today().year}</span> Sukoon</p>
       </div>
     </div>
   </footer>
 
-  <a class="wa-float" data-wa href="https://wa.me/{PHONE}" aria-label="Chat on WhatsApp">
+  <a class="wa-float" data-ig href="{DM}" aria-label="DM us on Instagram">
     <svg><use href="#d-chat"/></svg>
   </a>
 

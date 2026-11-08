@@ -32,7 +32,7 @@
     "name": "Sukoon — At-Home Massage",
     "description": "Relaxing, non-medical at-home massage in Bengaluru. ₹2,500 per massage plus travel.",
     "url": "https://sukoonbysid.in/",
-    "telephone": "+91-00000-00000",
+    "sameAs": ["https://www.instagram.com/sukoonbysid/"],
     "image": "https://sukoonbysid.in/og-image.png",
     "paymentAccepted": "UPI, Cash",
     "currenciesAccepted": "INR",
@@ -167,7 +167,7 @@
 
   <a class="skip" href="#main">Skip to content</a>
   <!-- promo: Diwali offer. Remove this block (and run tools/build.py) when the offer ends. -->
-  <a class="promo" data-wa href="https://wa.me/910000000000?text=Hi%2C%20I%27d%20like%20to%20book%20the%20Diwali%20offer%20(%E2%82%B91%2C200)."><span class="promo-tag">diwali offer</span> <span><b>₹1,200</b> <s>₹2,500</s> per massage · limited weekend slots</span> <span class="promo-cta">book on whatsapp →</span></a>
+  <a class="promo" data-ig href="https://ig.me/m/sukoonbysid"><span class="promo-tag">diwali offer</span> <span><b>₹1,200</b> <s>₹2,500</s> per massage · limited weekend slots</span> <span class="promo-cta">dm us on instagram →</span></a>
 
   <header class="site-header" id="top">
     <div class="wrap header-inner">
@@ -197,8 +197,8 @@
           <h1>massage,<br>but make it <span class="scribble">at&nbsp;home.<svg viewBox="0 0 200 16" preserveAspectRatio="none"><use href="#d-squiggle"/></svg></span></h1>
           <p class="lede">A calm, comfortable massage in your own space. No spa traffic and no awkward waiting room. I bring the table, fresh linens and good oils, and you stay in control from booking to goodbye.</p>
           <div class="hero-cta">
-            <a class="btn" data-wa href="https://wa.me/910000000000?text=Hi%2C%20I%27d%20like%20to%20book%20a%20massage%20session.">
-              <svg class="i"><use href="#d-chat"/></svg> book on whatsapp
+            <a class="btn" data-ig href="https://ig.me/m/sukoonbysid">
+              <svg class="i"><use href="#d-chat"/></svg> dm us on instagram
             </a>
             <a class="link" href="#menu">see the menu ↓</a>
             <span class="note note-hero" aria-hidden="true">
@@ -318,9 +318,9 @@
             <div>
               <p class="when">step 1 · booking</p>
               <h3>you message me</h3>
-              <p>Send your area and a weekend slot at least 3 days ahead, on WhatsApp or with the form below.</p>
+              <p>Send your area and a weekend slot at least 3 days ahead, by Instagram DM or with the form below.</p>
               <ul class="ticks">
-                <li>I usually reply within an hour, always from this same number</li>
+                <li>I usually reply within an hour, always from @sukoonbysid</li>
                 <li>Ask me anything first. There's no pressure to book</li>
               </ul>
             </div>
@@ -330,7 +330,7 @@
             <div>
               <p class="when">step 2 · confirming</p>
               <h3>everything in writing</h3>
-              <p>I confirm the date, time, style and your exact total (₹2,500 plus travel) on WhatsApp.</p>
+              <p>I confirm the date, time, style and your exact total (₹2,500 plus travel) in your Instagram DMs.</p>
               <ul class="ticks">
                 <li>You pay nothing until I've confirmed</li>
                 <li>The ₹500 UPI advance comes off your total</li>
@@ -532,16 +532,16 @@
         <div class="reveal">
           <p class="kicker">book a session</p>
           <h2>ready to <span class="scribble">unwind?<svg viewBox="0 0 200 16" preserveAspectRatio="none"><use href="#d-squiggle"/></svg></span></h2>
-          <p class="muted">Fill this in and WhatsApp opens with your request already typed out. Nothing is saved on this site.</p>
+          <p class="muted">Fill this in and your request is copied, ready to paste into an Instagram DM to @sukoonbysid. Nothing is saved on this site.</p>
           <p class="avail"><svg><use href="#d-cal"/></svg><span><strong>Saturdays &amp; Sundays only.</strong> Please book at least 3 days ahead. A ₹500 UPI advance confirms your slot.</span></p>
           <div class="contact-alt">
-            <a data-wa href="https://wa.me/910000000000"><svg><use href="#d-chat"/></svg>WhatsApp</a>
-            <a href="tel:+910000000000"><svg><use href="#d-heart"/></svg>+91 00000 00000</a>
+            <a data-ig href="https://ig.me/m/sukoonbysid"><svg><use href="#d-chat"/></svg>DM @sukoonbysid</a>
+            <a data-ig href="https://www.instagram.com/sukoonbysid/"><svg><use href="#d-heart"/></svg>see our instagram</a>
           </div>
           <span class="note note-form" aria-hidden="true">takes ~20 seconds
             <svg class="note-arrow"><use href="#d-arrow"/></svg>
           </span>
-          <img class="illo illo-chat" src="images/chat.svg" width="440" height="400" loading="lazy" alt="A phone showing a WhatsApp chat with a booking confirmed">
+          <img class="illo illo-chat" src="images/chat.svg" width="440" height="400" loading="lazy" alt="A phone showing a chat with a booking confirmed">
         </div>
 
         <form class="booking card reveal" id="booking-form" novalidate>
@@ -614,9 +614,10 @@
             <label for="f-notes">anything I should know? <span class="opt">(optional)</span></label>
             <textarea id="f-notes" name="notes" rows="3" placeholder="stiff neck, prefer firm pressure, old knee injury…"></textarea>
           </div>
-          <p class="form-assure"><svg><use href="#d-lock"/></svg><span><strong>No payment now.</strong> This just opens WhatsApp. You only pay the ₹500 advance after I've confirmed your slot.</span></p>
+          <p class="form-assure"><svg><use href="#d-lock"/></svg><span><strong>No payment now.</strong> This just opens Instagram DMs. You only pay the ₹500 advance after I've confirmed your slot.</span></p>
+          <p class="form-ok" role="status" hidden></p>
           <p class="form-error" role="alert" hidden>Please fill in all the fields above (notes are optional).</p>
-          <button class="btn btn-block" type="submit"><svg class="i"><use href="#d-chat"/></svg> continue on whatsapp</button>
+          <button class="btn btn-block" type="submit"><svg class="i"><use href="#d-chat"/></svg> copy &amp; open instagram dm</button>
         </form>
       </div>
     </section>
@@ -627,12 +628,12 @@
       <p class="footer-word">sukoon<svg><use href="#d-sparkle"/></svg></p>
       <div class="footer-row">
         <p>At-home relaxation massage · Bengaluru<br>Not a certified therapist. Non-medical, non-sexual massage only.</p>
-        <p><a href="tel:+910000000000">+91 00000 00000</a><br>© <span id="year">2026</span> Sukoon</p>
+        <p><a data-ig href="https://www.instagram.com/sukoonbysid/">@sukoonbysid</a><br>© <span id="year">2026</span> Sukoon</p>
       </div>
     </div>
   </footer>
 
-  <a class="wa-float" data-wa href="https://wa.me/910000000000" aria-label="Chat on WhatsApp">
+  <a class="wa-float" data-ig href="https://ig.me/m/sukoonbysid" aria-label="DM us on Instagram">
     <svg><use href="#d-chat"/></svg>
   </a>
 
